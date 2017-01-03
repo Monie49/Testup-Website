@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+<p>
+  <strong>Name:</strong>
+  <%= @course.name %>
+  <strong>Size:</strong>
+  <%= @course.users.count %>
+  <strong>Teacher:</strong>
+  <%= @course.teacher %>
+</p>
+
+<p>
+<strong>Students:</strong>
+<% @course.users.each do |student| %>
+  <p><%= student.name %></p>
+<% end %>
+</p>
+
+<% if is_teacher? %>
+    <%= button_to "New Exam", new_exam_path, method: :get, class: 'btn btn-primary'%>
+<% end %>
+</div>
+</div>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

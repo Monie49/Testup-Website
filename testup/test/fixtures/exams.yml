@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course: MyString
+  location: MyString
+  date: 2016-09-24
+  time: 2016-09-24 06:47:11
+  seats: 1
+
+two:
+  course: MyString
+  location: MyString
+  date: 2016-09-24
+  time: 2016-09-24 06:47:11
+  seats: 1

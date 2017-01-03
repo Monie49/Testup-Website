@@ -1,0 +1,36 @@
+<section>
+  <p><strong>Test Info:</strong></p>
+  <p>
+    <strong>Course:</strong>
+    <%= @exam.course.name %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= @exam.date %>
+  </p>
+
+  <p>
+    <strong>Location:</strong>
+    <%= @exam.location %>
+  </p>
+</section>
+
+<% if RegisteredExam.exists?(exam_id: @exam.id) %>
+  <section>
+  <p><strong>Registered Students:</strong></p>
+  <% RegisteredExam.where(:exam_id => @exam.id).to_a.each do |r|  %>
+    <ul>
+      <li><%= r.user.name %></li>
+    </ul>
+  </section>
+  <% end %>
+<% end %>
+
+<% if is_teacher? %>
+  <%= link_to 'Edit', edit_exam_path(@exam) %> |
+  <%= link_to 'Back', exams_path %>
+<% else %>
+  <%= link_to 'Back', curr_user %>
+  <%= link_to 'Join', '#' %>
+<% end %>

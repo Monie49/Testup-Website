@@ -1,0 +1,18 @@
+<%= form_for(@exam) do |f| %>
+  <%= f.label :course %>
+  <%= f.text_field :course, class: 'form-control' %>
+
+  <%= f.label :location %>
+  <%= f.email_field :location, class: 'form-control' %>
+
+  <%= f.label :date %>
+  <%= f.password_field :date, class: 'form-control' %>
+
+  <%= f.label :time %>
+  <%= f.password_field :time, class: 'form-control' %>
+
+  <%= f.label :seats %>
+  <%= f.password_field :time, class: 'form-control' %>
+
+  <%= f.submit "Create an Exam", class: "btn btn-primary" %>
+<% end %>

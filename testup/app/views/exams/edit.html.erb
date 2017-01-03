@@ -1,0 +1,7 @@
+<h1>Editing Exam</h1>
+
+<% @exam = Exam.find(params[:id]) %>
+<%= render 'form', exam: @exam %>
+
+<%= link_to 'Show', @exam %> |
+<%= link_to 'Back', exams_path %>
